@@ -14,7 +14,7 @@ import logo from './../images/logo.png';
 import * as FaIcons from 'react-icons/fa';
 
 
-const AppNavbar = ({pageChange}) => {
+const AppNavbar = () => {
   return (
     <header>
         <h1>
