@@ -6,7 +6,7 @@ import './styles/hub.css'
 import Routes from './Routes'
 import { BrowserRouter, Route } from 'react-router-dom'
 
-export default function Hub() {
+function Hub() {
     return (
        <BrowserRouter>
          <Route render = {(props) => (
@@ -19,3 +19,5 @@ export default function Hub() {
         </BrowserRouter>
     );
 };
+
+export default Hub;

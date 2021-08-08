@@ -10,37 +10,24 @@ import React, { useState } from 'react';
 import { Navbar, Nav, Container} from 'react-bootstrap';
 import './styles/header.css';
 import logo from './../images/logo.png';
+
 import * as FaIcons from 'react-icons/fa';
 
 
-const AppNavbar = () => {
+const AppNavbar = ({pageChange}) => {
   return (
-    <>
-      <Navbar bg='primary' variant='dark' expand='xl'>
-        <Container fluid>
-          <Navbar.Brand href='/'>
-          <img src={logo} alt="Andrew Wing" className="logo"/>
-          </Navbar.Brand>
-        <Navbar.Toggle aria-controls='navbar' />
-          <Navbar.Collapse id='navbar'>
-            <Nav className='ml-auto'>
-                <Nav.Link href='/'>
-                  <FaIcons.FaUserNinja /> About Me
-                  </Nav.Link>
-                  <Nav.Link href='/projects'>
-                    <FaIcons.FaProjectDiagram /> Projects
-                  </Nav.Link>
-                  <Nav.Link href='/cv'>
-                    <FaIcons.FaFileDownload /> Download CV 
-                  </Nav.Link>
-                  <Nav.Link href='/contact'>
-                    <FaIcons.FaFileDownload /> Contact 
-                  </Nav.Link>
-            </Nav>
-          </Navbar.Collapse>
-        </Container>
-      </Navbar>
-    </>
+    <header>
+        <h1>
+            <img src={logo} alt="Andrew Wing" className="signature"/>
+        </h1>
+        <nav>
+            <a href="/about"> <FaIcons.FaUserNinja /> About Me</a>
+            <a href="/projects"><FaIcons.FaProjectDiagram /> Projects</a>
+            <a href="/cv"><FaIcons.FaFileDownload /> CV</a>
+            <a href="/contact"><FaIcons.FaEnvelopeOpenText /> Contact</a>
+        </nav>
+
+    </header>
     );
 };
 
