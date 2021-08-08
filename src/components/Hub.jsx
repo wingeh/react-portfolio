@@ -2,8 +2,8 @@
 // THEN the About Me title and section are selected by default
 
 import React from 'react'
-import './styles/hub.scss'
-import Routes from '../Routes'
+import './styles/hub.css'
+import Routes from './Routes'
 import { BrowserRouter, Route } from 'react-router-dom'
 
 export default function Hub() {
@@ -11,10 +11,8 @@ export default function Hub() {
        <BrowserRouter>
          <Route render = {(props) => (
             <div className='hub'>
-                <div className="hub__content" >              
-                    <div className="hub__content_main">
-                        <Routes/>
-                    </div>
+                <div className="content" >              
+                    <Routes/>
                 </div>
             </div>
           )}/>

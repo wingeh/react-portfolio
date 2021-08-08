@@ -7,11 +7,9 @@
 //  THEN I am presented with the corresponding section below the navigation without the page reloading and that title is highlighted
 
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
 import { Navbar, Nav, Container} from 'react-bootstrap';
-import './Navbar.scss';
-
-import { IconContext } from 'react-icons';
+import './styles/header.css';
+import logo from './../images/logo.png';
 import * as FaIcons from 'react-icons/fa';
 
 
@@ -23,7 +21,6 @@ const AppNavbar = () => {
           <Navbar.Brand href='/'>
           <img src={logo} alt="Andrew Wing" className="logo"/>
           </Navbar.Brand>
-
         <Navbar.Toggle aria-controls='navbar' />
           <Navbar.Collapse id='navbar'>
             <Nav className='ml-auto'>
