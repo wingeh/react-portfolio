@@ -5,3 +5,46 @@
 //  THEN I am presented with the titles About Me, Portfolio, Contact, and Resume, and the title corresponding to the current section is highlighted
 //  WHEN I click on a navigation title
 //  THEN I am presented with the corresponding section below the navigation without the page reloading and that title is highlighted
+
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { Navbar, Nav, Container} from 'react-bootstrap';
+import './Navbar.scss';
+
+import { IconContext } from 'react-icons';
+import * as FaIcons from 'react-icons/fa';
+
+
+const AppNavbar = () => {
+  return (
+    <>
+      <Navbar bg='primary' variant='dark' expand='xl'>
+        <Container fluid>
+          <Navbar.Brand href='/'>
+          <img src={logo} alt="Andrew Wing" className="logo"/>
+          </Navbar.Brand>
+
+        <Navbar.Toggle aria-controls='navbar' />
+          <Navbar.Collapse id='navbar'>
+            <Nav className='ml-auto'>
+                <Nav.Link href='/'>
+                  <FaIcons.FaUserNinja /> About Me
+                  </Nav.Link>
+                  <Nav.Link href='/projects'>
+                    <FaIcons.FaProjectDiagram /> Projects
+                  </Nav.Link>
+                  <Nav.Link href='/cv'>
+                    <FaIcons.FaFileDownload /> Download CV 
+                  </Nav.Link>
+                  <Nav.Link href='/contact'>
+                    <FaIcons.FaFileDownload /> Contact 
+                  </Nav.Link>
+            </Nav>
+          </Navbar.Collapse>
+        </Container>
+      </Navbar>
+    </>
+    );
+};
+
+export default AppNavbar;
