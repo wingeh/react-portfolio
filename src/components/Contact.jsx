@@ -5,76 +5,42 @@
 // WHEN I enter text into the email address field
 // THEN I receive a notification if I have entered an invalid email address
 
-import React, { useState } from 'react'
-
-import { checkEmail } from '../utils/helper';
+import React, { useState } from 'react';
 
 function Contact() {
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [message, setMessage] = useState('');
-  const [error, setError] = useState('');
-
-  const inputChangeHandler = (event) => {
-      const inputName = event.target.name;
-      const inputValue = event.target.value;
-      if (inputName === 'name') {
-          setName(inputValue);
-      } else if (inputName === 'email') {
-          setEmail(inputValue); 
-      } else if (inputName === 'message') {
-          setMessage(inputValue)
-      }
-  };
-  const formSubmit = (event) => {
-      event.preventDefault();
-      if (!name || !email || !message ) {
-          setError('Required field not completed')
-          return
-      }
-      if (!checkEmail(email)) {
-          setError('Please use a valid email');
-          return 
-      }
-      setName('');
-      setEmail('');
-      setMessage('');
-  }
     return (
-      <content>
-      <h1>Contact</h1>
-      <form className="form">
-                <input
-                value={name}
-                name="name"
-                onChange={inputChangeHandler}
-                type="text"
-                placeholder="Name"
-                />
-                <input
-                value={email}
-                name="email"
-                onChange={inputChangeHandler}
-                type="text"
-                placeholder="Email"
-                />
-                <textarea
-                value={message}
-                name="message"
-                onChange={inputChangeHandler}
-                type="text"
-                placeholder="Message"
-                />
-                <button type="button" onClick={formSubmit}>
-                Submit
-                </button>
-            </form>
-            {error && (
-                <div>
-                    <p>{error}</p>
-                </div>
-            )}
-      </content>
+      <div className="container">
+      <form className="form-horizontal" action="">
+      <legend className="text-center">Contact us</legend>
+
+      <div className="form-group">
+      <label className="col-md-3 control-label" for="name">Name</label>
+      <div className="col-md-9">
+          <input id="name" name="name" type="text" placeholder="Name" className="form-control"/>
+      </div>
+      </div>
+
+      <div className="form-group">
+      <label className="col-md-3 control-label" for="email">E-mail</label>
+      <div className="col-md-9">
+          <input id="email" name="email" type="text" placeholder="Email" className="form-control"/>
+      </div>
+      </div>
+
+      <div className="form-group">
+      <label className="col-md-3 control-label" for="message">Message</label>
+      <div className="col-md-9">
+          <textarea className="form-control" id="message" name="message" placeholder="Please enter your message here..." rows="5"></textarea>
+      </div>
+      </div>
+
+      <div className="form-group">
+      <div className="col-md-12 text-right my-2">
+          <button type="submit" className="btn btn-primary btn-lg">Submit</button>
+      </div>
+      </div>
+  </form>
+  </div>
     );
 };
 

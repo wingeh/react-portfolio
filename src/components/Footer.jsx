@@ -7,8 +7,12 @@ import './styles/footer.css';
 function Footer() {
     return (
         <footer>
-            <p>Copyright &copy; 2021 Andrew Wing</p>
-            <p>All Rights Reserved.</p>
+            <p><a href="https://github.com/wingeh" target="_blank">GitHub</a> -
+            <a href="https://www.linkedin.com/in/andrew-wing-03a47968/" target="_blank">LinkedIn</a> -
+            <a href="https://twitter.com" target="_blank">Twitter</a>
+            </p>
+            <p>Copyright &copy; 2021 Andrew Wing <br />
+            All Rights Reserved.</p>
         </footer>
     );
 };
