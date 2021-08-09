@@ -3,14 +3,14 @@
 
 
 import React from 'react';
-import {Link} from 'react-router-dom';
+import cv from './../downloads/pdf/cv.pdf';
 import * as FaIcons from 'react-icons/fa';
 
 function Cv() {
     return (
       <div>
       <h2>Curriculum Vitae</h2>
-      <Link to="./../downloads/pdf/cv.pdf" target="_blank" download><FaIcons.FaDownload />Download PDF</Link>
+      <a href={cv} download><FaIcons.FaDownload />Download PDF</a>
       </div>
     );
 };
